@@ -25,11 +25,6 @@
         "username": "Isaac DeMello",
         "url": "https://www.linkedin.com/in/isaac-demello-b1012b133"
       },
-      //{
-        //"network": "twitter",
-        //"username": "mollymal",
-        //"url": "http://twitter.com/changeme"
-      //},
       {
         "network": "instagram",
         "username": "molly",
@@ -39,20 +34,24 @@
   },
   "interests": [
     {
-      "name": "internet of things",
+      "name": "",
       "keywords": [
         "Arduino",
         "TI MSP430"
       ]
     },
     {
-      "name": "data mining",
+      "name": "App Development",
       "keywords": [
+        "User Experience"
+        "
       ]
     },
     {
       "name": "artificial intelligence",
       "keywords": [
+        "Machine Learning"
+        
       ]
     }
   ],
@@ -62,11 +61,8 @@
       "level": "",
       "keywords": [
         "C",
-        "C++",
         "Java",
-        "Javascript",
-        "Assembly",
-        "Common Lisp"
+        "Javascript"
       ]
     },
     {
@@ -86,32 +82,35 @@
       "institution": "University of Hawaii, Honolulu, HI",
       "area": "Computer Science (expected Spring, 2018)",
       "studyType": "B.S.",
-      "startDate": "2013-09-01",
+      "startDate": "2016-06-01",
       "endDate": "Present",
       "gpa": "",
-      "courses": [
+      "courses": ["Discrete Mathematics for Computer Science I/II",
+                  "Introduction to Computerscience I/II"
+                  "Software Engineering I"
+                  "Algorithms"
       ]
     }
   ],
   "work": [
     {
-      "company": "UH Manoa Board of Publications",
-      "position": "Web Developer",
-      "website": "",
-      "startDate": "2015-08-01",
+      "company": "Kapiolani Community College",
+      "position": "Computer Science Tutor",
+      "website": "http://stem.kapiolani.hawaii.edu/peer-mentors/",
+      "startDate": "2016-09-01",
       "endDate": "Present",
-      "summary": "Head of online presence for Ka Leo",
+      "summary": "Tutoring students of various skill levels in the C/Java, and Discrete Mathematics",
       "highlights": [
-        "Maintain, update, and oversee official college newspaper website",
-        "Drive, design and build student-community projects for UH Manoa"
+        "Providing a positive influence for students who have interest in Computer Science",
+        "Facilitating the learning process for students new to programming"
       ]
     },
     {
-      "company": "UH Information Technology Services",
-      "position": "Help Desk Consultant",
-      "website": "http://www.hawaii.edu/its/",
-      "startDate": "2015-01-01",
-      "endDate": "2016-03-15",
+      "company": "Kaimuki High School",
+      "position": "ESL Teacher",
+      "website": "",
+      "startDate": "2014-07-01",
+      "endDate": "2015-06-01",
       "summary": "",
       "highlights": [
         "Troubleshoot software, hardware and networking issues over the phone",
