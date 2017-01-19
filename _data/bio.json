@@ -79,8 +79,8 @@
       "endDate": "Present",
       "gpa": "",
       "courses": ["Discrete Mathematics for Computer Science I/II",
-                  "Introduction to Computerscience I/II"
-                  "Software Engineering I"
+                  "Introduction to Computerscience I/II",
+                  "Software Engineering I",
                   "Algorithms"
       ]
     }
