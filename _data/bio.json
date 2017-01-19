@@ -6,10 +6,10 @@
     "email": "idemello@hawaii.edu",
     "phone": "808-497-1171",
     "website": "https://idemello.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2018.",
+    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Fall, 2018.",
     "location": {
       "address": "",
-      "postalCode": "96822",
+      "postalCode": "",
       "city": "Honolulu",
       "countryCode": "USA",
       "region": "Hawaii"
@@ -24,34 +24,27 @@
         "network": "linkedin",
         "username": "Isaac DeMello",
         "url": "https://www.linkedin.com/in/isaac-demello-b1012b133"
-      },
-      {
-        "network": "instagram",
-        "username": "molly",
-        "url": "http://instagram.com/changeme"
       }
     ]
   },
   "interests": [
     {
-      "name": "",
+      "name": "Sustainability",
       "keywords": [
-        "Arduino",
-        "TI MSP430"
+        "Clean Energy",
+        "Energy Efficiency"
       ]
     },
     {
       "name": "App Development",
       "keywords": [
         "User Experience"
-        "
       ]
     },
     {
       "name": "artificial intelligence",
       "keywords": [
         "Machine Learning"
-        
       ]
     }
   ],
