@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/cansat
+image: images/cansat.jpeg
 title: NASA CANSAT Project
 permalink: projects/cansat
 date: 2016
@@ -12,12 +12,6 @@ labels:
 summary: My team developed a 3D printed payload/canister system that was tested in atmospheric conditions, and collected atmospheric data upon descent.
 ---
 
-<div class="ui small rounded images">
-  <img class="ui image" src="../images/micromouse-robot.png">
-  <img class="ui image" src="../images/micromouse-robot-2.jpg">
-  <img class="ui image" src="../images/micromouse.jpg">
-  <img class="ui image" src="../images/micromouse-circuit.png">
-</div>
 
 
 
