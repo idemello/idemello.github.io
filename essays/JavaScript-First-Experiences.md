@@ -2,7 +2,7 @@
 layout: essay
 type: essay
 title: First Experiences with Javascript
-date: 2016-02-06
+date: 2017-01-18
 labels:
   - Software Engineering
   - Programming
