@@ -10,6 +10,9 @@ labels:
   - Mentoring
 summary: 
 ---
+
+<img class="ui medium right floated rounded image" src="../images/mall.jpg">
+
 During my Junior year I was accepted into the ACE Peer Mentoring program. This program enabled upper classmen to mentor incoming freshman on the necessary skills needed to succeed in college. For the freshman this was a useful program that allowed them to learn how to connect with peers, create study groups, learn better time management, among many other helpful techniques. For the peer mentors this experience taught leadership, organizational skills, and an insight into teaching. 
  
  
