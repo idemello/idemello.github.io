@@ -8,7 +8,7 @@ labels:
   - Programming
 ---
 
-<img class="ui medium left floated image" src="../images/helloworld.jpg">
+<img class="ui image" src="{{ site.baseurl }}/images/helloworld.jpg">
 
 ## First Impressions
 
