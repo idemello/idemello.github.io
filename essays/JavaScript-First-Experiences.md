@@ -8,7 +8,7 @@ labels:
   - Programming
 ---
 
-<img class="ui medium left floated image" src="../images/helloworld.png">
+<img class="ui medium floated image" src="../images/helloworld.png">
 
 ## First Impressions
 
