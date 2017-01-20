@@ -8,6 +8,8 @@ labels:
   - Programming
 ---
 
+<img class="ui medium floated image" src="../images/helloworld.jpg">
+
 ## First Impressions
 
 I started programming a little over a year ago, with the C language. C taught very important lessons about programming syntax, the command line, and memory management among other vital concepts. I also learned the litany of errors that can occur from the smallest mistakes. Taking that restrictive nature into Javascript, I have been pleasantly surprised by the leniency that exists within the language. Being able to declare all datatypes with simply let or const (and unfavorably var), is extremely convenient and allows coding to feel much more creative than analytic.  Upon further reading of the language the unrestrictive nature continues with cases where functions can easily be arrays, objects can be created using {}, and all the useful functions that existed within Java translate easily.
