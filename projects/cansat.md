@@ -23,6 +23,6 @@ My role for this project was mechanical engineering team lead. One of the major 
 
 From this project I learned the engineering process. Our team had an initial design that originated through research and what we conceptualized to be the best idea possible. From there we created a presentation with our initial design and presented it to a panel of NASA judges. The judges then offered critiques and suggestions for improving our design. After the improvements testing finally began and many more changes occured. The new tested design went through the judging process again before being approved. To see something go through the entire process was a very powerful experience and illustrated expectation vs. reality. 
 
-Another very important lesson from this project was the good and the bad sides of working with several teams within an overall team structure. The bad side of the project was that working with a programming team, an electrical engineering team, and a mechanical engineering team, many ideas of each individual group did not always work together. This ca
+Competition Website: http://www.cansatcompetition.com/
 
 
