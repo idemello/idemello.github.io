@@ -12,7 +12,9 @@ labels:
 summary: My team developed a 3D printed payload/canister system that was tested in atmospheric conditions, and collected atmospheric data upon descent.
 ---
 
-
+<div class="ui small rounded images">
+  <img class="ui image" src="../images/cansat.jpeg">
+</div>
 
 
 The NASA CANSAT competition is a yearly competition sponsored by NASA in which teams must follow a specific set of instructions to create a system within the specified requirements. For this project year, we were to create a canister that would hold a glider. Upon deployment, the glider would descend in a helical pattern while collecting atmospheric data such as temperature, GPS coordinates, atmospheric pressure, altitude, among many others. The system could not exceed 500g, and was required to fit in a rocket approximately 10 inches in diameter. The competition was held with many teams presenting their designs, then narrowed down to 40 teams that would be flown out to Texas for the competition. 
