@@ -31,30 +31,21 @@
     {
       "name": "Sustainability",
       "keywords": [
-        "Clean Energy",
-        "Energy Efficiency"
       ]
     },
     {
       "name": "App Development",
       "keywords": [
-        "User Experience"
-        "Monetization",
-        "Effective Advertising"
       ]
     },
      {
       "name": "Software Engineering",
       "keywords": [
-        "Athletic Programming",
-        "Collaboration",
-        "Team Programming"
       ]
     },
     {
       "name": "Marketing",
       "keywords": [
-        "User Experience"
       ]
     },
     {
@@ -72,6 +63,17 @@
         "C",
         "Java",
         "Javascript"
+      ]
+    },
+    {
+      "name": "Marketing",
+      "level": "",
+      "keywords": [
+        "Account Management",
+        "Business to Business Sales",
+        "Business to Client Sales",
+        "Cold Calling",
+        "Advertising"
       ]
     }
   ],
