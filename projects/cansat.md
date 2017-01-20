@@ -13,7 +13,7 @@ summary: My team developed a 3D printed payload/canister system that was tested 
 ---
 
 
-  <img src="../images/cansat.jpeg" style="width:500px;height:500px";>
+ <img class="ui medium right floated rounded image" src="../images/cansat.jpeg">
 
 
 
