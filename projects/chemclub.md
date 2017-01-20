@@ -15,6 +15,8 @@ labels:
 summary: 
 ---
 
+<img class="ui medium left floated rounded image" src="../images/periodictable.jpg">
+
 During the last few years of my chemistry degree, I undertook the responbility of being the President of the Chemistry Club. During this time I was in charge of several things such as increasing club membership, organizing events, connecting chemistry students among themselves, and creating a connection between faculty and undergraduates.
 
 When I first took over the club in 2011 club membership was at an impressive two members, the president and the vice president. Over the course of the next 2 and a half years I was able to increase membership up to 30 members. This was done through the use of organizing events that interested students, doing announcements in chemistry courses, and by creating an enviroment where the small number of chemistry students (and those that were interested in chemistry) could collaborate and work together. 
