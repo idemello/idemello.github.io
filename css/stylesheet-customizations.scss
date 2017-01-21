@@ -8,7 +8,8 @@
 // Customize the background color
 body {
     //background: linear-gradient(to bottom right, NavajoWhite, whitesmoke);
-      background-image: github.com/idemello/idemello.github.io/tree/master/images/oceanback.png;
+     background: url(images/oceanback.png) no-repeat center fixed; 
+     background-size: cover;
 }
 
 // Customize the menubar color
