@@ -6,7 +6,7 @@
     "email": "idemello@hawaii.edu",
     "phone": "808-497-1171",
     "website": "https://idemello.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Fall, 2018.",
+    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Fall, 2018. Obtained a B.A. in Chemistry from U.H Manoa in 2013.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -129,7 +129,29 @@
         "Assisting students with language barriers in a large variety of subjects",
         "Instructing classes of 10 – 30 students in Chemistry, Mathematics, and Health"
       ]
-    }
+    },
+    {
+      "company": "Elite Concierge",
+      "position": "Computer Science Tutor",
+      "website": "https://www.eliteconciergehawaii.com/page/welcome",
+      "startDate": "2014-11-01",
+      "endDate": "2016-01-01",
+      "summary": "Responsible for solving guest issues in a timely fashion with satifcation and a sense of urgency.",
+      "highlights": [
+        "Building rapport with guests from all over the world, ensuring that any questions or issues were quickly resolved"
+      ]
+    },
+    {
+      "company": "Wyndham Vacation Ownership",
+      "position": "Community Marketing Agent",
+      "website": "http://www.wyndhamworldwide.com/category/wyndham-vacation-ownership",
+      "startDate": "2013-11-01",
+      "endDate": "2014-08-01",
+      "summary": "Maintaing a courteous and informative demeanor while assisting potential clients with timeshare tours",
+      "highlights": [
+      ]
+    },
+    
   ],
   "references": [
     {
