@@ -8,7 +8,7 @@ date: 2011
 labels:
   - Education
   - Mentoring
-summary: 
+summary: Peer Mentoring program in which upper classmen teach incoming freshman on college "survival" skills.
 ---
 
 <img class="ui medium right floated rounded image" src="../images/mall.jpg">
