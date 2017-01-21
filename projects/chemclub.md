@@ -12,7 +12,7 @@ labels:
   - Fundraising
   - Education 
   
-summary: 
+summary: Took over the presidency of the University of Hawaii at Manoa Chemistry Club, increased membership from two members to approximately 30, and facillitated the organization of many activites for interested members.
 ---
 
 <img class="ui medium left floated rounded image" src="../images/periodictable.jpg">
