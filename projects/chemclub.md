@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/caffeine.png
+image: images/caffeineResize.png
 title: Chemistry Club
 permalink: projects/chemclub
 date: 2013
