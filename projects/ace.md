@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/ace.jpg
+image: images/aceResize.png
 title: ACE Peer Mentoring
 permalink: projects/ace
 date: 2011
