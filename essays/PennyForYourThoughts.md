@@ -9,8 +9,8 @@ labels:
   - StackOverflow
 ---
 <img class="ui medium right floated rounded image" src="../images/proAndBob.jpg">
-<img class="ui medium left floated rounded image" src="../images/iAmWeasel.png">
 
+# The Importance of a Good Question
 
 
 
