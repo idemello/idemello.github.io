@@ -9,6 +9,7 @@ labels:
 ---
 
 <img class="ui medium right floated rounded image" src="../images/mainframe.png">
+
 ## Why?
 
 To me software engineering represents the ability to start from scratch and create something very powerful. Whether the creation is an app that entertains, a program that collects data from a satellites, or a simple flashlight on one's phone; software engineering allows us to take ideas and make them a reality.  
