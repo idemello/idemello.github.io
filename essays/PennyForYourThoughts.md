@@ -8,13 +8,12 @@ labels:
   - Programming
   - StackOverflow
 ---
-
 <img class="ui medium right floated rounded image" src="../images/proAndBob.jpg">
 <img class="ui medium left floated rounded image" src="../images/iAmWeasel.png">
 
 
 
-# The Importance of a Good Question
+
 
 In any professional field there exists a learning curve essential for progress toward a final goal. Whether that goal is a software engineering project, home improvement, or solving a mathematical proof, there is (usually) an experienced source of knowledge in that field. In the current day and age where forums and message boards exist for nearly any subject, getting the most out of our resources can greatly speed up the learning process and help us to overcome obstacles. In this week's experience "*Reflect on Smart Questions*" we learned that how you structure your questions can make all the difference. 
 
