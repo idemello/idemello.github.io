@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: First Experiences with Javascript
+title: You Can't Always Git What You Want
 date: 2017-01-18
 labels:
   - Software Engineering
