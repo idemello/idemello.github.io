@@ -1,3 +1,4 @@
+---
 layout: essay
 type: essay
 title: First Experiences with Javascript
@@ -5,7 +6,7 @@ date: 2017-01-18
 labels:
   - Software Engineering
   - Programming
-
+---
 # git add finishedEssay
 ## fatal: pathspec 'finishedEssay' did not match any files
 
