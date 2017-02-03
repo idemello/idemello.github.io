@@ -2,7 +2,7 @@
 layout: essay
 type: essay
 title: You Can't Always Git What You Want
-date: 2017-01-18
+date: 2-02-18
 labels:
   - Software Engineering
   - Programming
