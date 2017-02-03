@@ -6,7 +6,16 @@ date: 2017-01-18
 labels:
   - Software Engineering
   - Programming
+  - Git
 ---
+
+<div class="ui small rounded images">
+  <img class="ui image" src="../images/yeswecode.jpg">
+  <img class="ui image" src="../images/jedicat.jpg">
+  <img class="ui image" src="../images/founding-father.jpg">
+  <img class="ui image" src="../images/heisencat.png">
+</div>
+
 # git add finishedEssay
 ## fatal: pathspec 'finishedEssay' did not match any files
 
