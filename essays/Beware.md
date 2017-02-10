@@ -2,7 +2,7 @@
 layout: essay
 type: essay
 title: Beware the IDEs of Javascript
-date: 2017-09-02
+date: 2017-02-09
 labels:
   - Software Engineering
   - Programming
