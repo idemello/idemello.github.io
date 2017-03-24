@@ -13,7 +13,7 @@ labels:
 
 ## One Small Step for Man
 
-<img class = "ui small image" src = http://i.dailymail.co.uk/i/pix/2012/08/26/article-2193737-14B2A689000005DC-359_964x635.jpg> 
+<img class = "ui small image" src = "http://i.dailymail.co.uk/i/pix/2012/08/26/article-2193737-14B2A689000005DC-359_964x635.jpg"> 
 
 This has been the month where everything we have learned thus far has been combined into a set of challenging modules. The basis of all these modules has been the JavaScript framework Meteor. I will say that I have gone through the motions of learning Meteor, and It has been incredibly frustrating. However being able to build a visually appealing interactive website has been something I have wanted to do for a long time. Being so close (hopefully) to that point has pushed me through the difficulties of the previous weeks.
 
@@ -29,4 +29,4 @@ Conversely, Meteor does provide a very simple way to connect your entire web pag
 
 So having a small grasp of the basics of Meteor what is next for the students of 314? A lot. There is so much more and we’ve barely scratched the surface of the capabilities of meteor.  Which is both exciting and terrifying. To be able to create a fully functioning website that can achieve something that we’ve planned out represents a whole new world of possibilities. In that regard I am very excited, but to be honest I am much more terrified of what lies ahead. Because on top of learning meteor to the necessary degree, we need to do this while coordinating with group members, setting up a group repo (hopefully we don’t destroy each other’s code), and deploying it to this crazy thing called galaxy. So at this point it’s me vs. Meteor, I hope I have better luck than Bruce Wills and crew.
 
-<img src = "http://mytoba.ca/content/uploads/2016/02/crop_620x350_20160208_331PM.jpg" class = "ui medium left floated rounded image">
+<img src = "http://mytoba.ca/content/uploads/2016/02/crop_620x350_20160208_331PM.jpg" class = "ui medium left floated image">
