@@ -13,7 +13,7 @@ labels:
 
 ## One Small Step for Man
 
-<img class = "ui large image" src = "http://i.dailymail.co.uk/i/pix/2012/08/26/article-2193737-14B2A689000005DC-359_964x635.jpg"> 
+<img class = "ui medium right floated rounded image" src = "http://i.dailymail.co.uk/i/pix/2012/08/26/article-2193737-14B2A689000005DC-359_964x635.jpg"> 
 
 This has been the month where everything we have learned thus far has been combined into a set of challenging modules. The basis of all these modules has been the JavaScript framework Meteor. I will say that I have gone through the motions of learning Meteor, and It has been incredibly frustrating. However being able to build a visually appealing interactive website has been something I have wanted to do for a long time. Being so close (hopefully) to that point has pushed me through the difficulties of the previous weeks.
 
