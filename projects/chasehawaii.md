@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/moleculeResize.png
+image: images/group.png
 title: Chase Hawaii
 permalink: projects/chasehawaii
 date: 2013
@@ -12,7 +12,7 @@ labels:
   - Software Engineering
   - Groupwork
   
-summary: Took over the presidency of the University of Hawaii at Manoa Chemistry Club, increased membership from two members to approximately 30, and facillitated the organization of many activites for interested members.
+summary: A web application built for University of Hawaii students to find their perfect adventure
 ---
 
 <img class="ui medium left floated rounded image" src="../images/landing.png">
