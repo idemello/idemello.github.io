@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/stickman.jpg
+image: images/hawaiibw.jpg
 title: Chase Hawaii
 permalink: projects/chasehawaii
 date: 2013
