@@ -12,7 +12,7 @@ labels:
   - Software Engineering
   - Groupwork
   
-summary: A web application built for University of Hawaii students to find their perfect adventure
+summary: A web application built for University of Hawaii students to find their perfect adventure. Whether that adventure is a hidden beach, an unexplored hike, or a new restaurant. Chase Hawaii will help you find it.
 ---
 
 <img class="ui large right floated rounded image" src="../images/landing.png">
