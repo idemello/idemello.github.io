@@ -15,7 +15,7 @@ labels:
 summary: A web application built for University of Hawaii students to find their perfect adventure
 ---
 
-<img class="ui medium left floated rounded image" src="../images/landing.png">
+<img class="ui large left floated rounded image" src="../images/landing.png">
 
 For our final project in ICS 314 we were tasked with creating a fully functional web application applying all the principles we had learned throughout the semester. This at first seemed overwhelming, but once I got into the project I realized that overwhelming was a massive understatement. Applying all the principles you've learned over a very quickly paced course adds up rapidly. Especially because I had not worked with any of the languages involved in the project until this semester, nor had I ever used a framework. Combining the elements of git, JavaScript, meteor, CSS, HTML, IDPM, and even more elements did not even scratch the surface of the requisite knowledge required for this project. Chase Hawaii quickly became a sink or swim scenario, so I did my best to do the latter.  
   
