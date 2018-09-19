@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <head>
+        <!-- Plotly.js -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <!--Semantic UI-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    </head>
+
+</head>
+<body>
+
+<div class="ui raised very padded text five column divided grid">
+    <div class="row">
+        <div class=" ui huge header column">
+            <a href =attacksDeaths.html>Attacks and Deaths</a>
+        </div>
+        <div class=" ui huge header column">
+            <a href =naples.html>Naples Age Data</a>
+        </div>
+        <div class=" ui huge header column">
+            <a href =UKCensus.html.html>UK Census Data</a>
+        </div>
+        <div class=" ui huge header column">
+            <a href =map.html>Map Data</a>
+        </div>
+        <div class=" ui huge header column">
+            <a href =about.html>About</a>
+        </div>
+
+    </div>
+</div>
+
+<div id = "malePie"></div>
+<div id = "femalePie"></div>
+<div id = "totalPie"></div>
+<div id = "table"></div>
+
+<script>
+    Plotly.d3.csv("https://raw.githubusercontent.com/idemello/Cholera484/master/UKcensus1851.csv", function(err, rows) {
+
+        function unpack(rows, key) {
+            return rows.map(function (row) {
+                return row[key];
+            });
+        }
+
+        function add(a,b){
+            return parseInt(a, 10) + parseInt(b, 10);
+        }
+
+        var headerNames = Plotly.d3.keys(rows[3]);
+        console.log(headerNames);
+
+        var headerValues = [];
+        var cellValues = [];
+        for (i = 0; i < headerNames.length; i++) {
+            headerValue = [headerNames[i]];
+            headerValues[i] = headerValue;
+            cellValue = unpack(rows, headerNames[i]);
+            cellValues[i] = cellValue;
+        }
+
+        // clean date
+        for (i = 0; i < cellValues[1].length; i++) {
+            var ageValue = cellValues[1][i].split(' ')[0];
+            cellValues[1][i] = ageValue
+        }
+
+        var maleValues = cellValues[1].slice(0);
+        var femaleValues = cellValues[2].slice(0);
+
+
+        var totalMales = maleValues.reduce(add, 0);
+        var totalFemales = femaleValues.reduce(add, 0);
+        var total = [totalMales, totalFemales];
+
+
+        console.log(cellValues[0]);
+        console.log(maleValues);
+        console.log(femaleValues);
+
+        var data = [{
+            type: 'table',
+            columnwidth: [200, 500, 600, 600, 400, 400, 600, 600, 600],
+            columnorder: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            header: {
+                values: headerValues,
+                align: "center",
+                line: {width: 1, color: 'rgb(50, 50, 50)'},
+                fill: {color: ['rgb(235, 100, 230)']},
+                font: {family: "Arial", size: 11, color: "white"}
+            },
+            cells: {
+                values: cellValues,
+                align: ["center", "center"],
+                line: {color: "black", width: 1},
+                fill: {color: ['rgba(228, 222, 249, 0.65)', 'rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)']},
+                font: {family: "Arial", size: 10, color: ["black"]}
+            }
+        }];
+
+        var malePieData = [{
+            values: maleValues,
+            labels: cellValues[0],
+            type: 'pie'
+        }];
+
+        var femalePieData = [{
+            values: femaleValues,
+            labels: cellValues[0],
+            type: 'pie'
+        }];
+
+
+        var totalPieData = [{
+            values: total,
+            labels: ['Male', 'Female'],
+            type: 'pie'
+        }];
+
+
+        var fLayout = {
+            title: 'Female',
+            height: 400,
+            width: 500
+        };
+
+        var mLayout = {
+            title: 'Male',
+            height: 400,
+            width: 500
+        };
+
+        var tLayout = {
+            title: 'Males v. Females',
+            height: 400,
+            width: 500
+
+        };
+
+        /*
+        var values = [
+            ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
+            [2075391, 1711664, 1395091, 1073914, 810979, 560534, 351893, 166194, 40772],
+            [2065096, 1711627, 1542876, 1140383, 845260, 592970, 399019, 199326, 55704]
+        ];
+
+        var data = [{
+            type: 'table',
+            header: {
+                values: [["Age Range"], ["Male"],
+                    ["Female"]],
+                align: "center",
+                line: {width: 1, color: 'black'},
+                fill: {color: "grey"},
+                font: {family: "Arial", size: 12, color: "white"}
+            },
+            cells: {
+                values: values,
+                align: "center",
+                line: {color: "black", width: 1},
+                font: {family: "Arial", size: 11, color: ["black"]}
+            }
+        }];
+
+        var malePieData = [{
+            values: [2075391, 1711664, 1395091, 1073914, 810979, 560534, 351893, 166194, 40772],
+            labels: ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
+            type: 'pie'
+        }];
+
+
+        var femalePieData = [{
+            values: [2065096, 1711627, 1542876, 1140383, 845260, 592970, 399019, 199326, 55704],
+            labels: ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
+            type: 'pie'
+        }];
+
+
+
+        */
+        Plotly.newPlot('malePie', malePieData, mLayout);
+        Plotly.newPlot('femalePie', femalePieData, fLayout);
+        Plotly.newPlot('totalPie', totalPieData, tLayout);
+        Plotly.plot('table', data);
+
+    })
+</script>
+</body>
+</html>

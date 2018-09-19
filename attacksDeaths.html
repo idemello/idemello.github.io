@@ -1,0 +1,201 @@
+<head>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!--Semantic UI-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+</head>
+
+<body>
+
+<div class="ui raised very padded text five column divided grid">
+    <div class="row">
+        <div class=" ui huge header column">
+            <a href =attacksDeaths.html>Attacks and Deaths</a>
+            <div class ="sub header">Table and line chart showing the number of deaths/attacks and their totals over time</div>
+        </div>
+        <div class=" ui huge header column">
+            <a href =naples.html>Naples Age Data</a>
+            <div class ="sub header">A bar chart of another cholera outbreak in Naples during the same time period</div>
+        </div>
+        <div class=" ui huge header column">
+            <a href =UKCensus.html>UK Census Data</a>
+            <div class ="sub header">A pie chart of UK census data during the cholera outbreak</div>
+        </div>
+        <div class=" ui huge header column">
+            <a href =map.html>Map Data</a>
+            <div class ="sub header">A map of current day London overlaid with cholera death by location </div>
+        </div>
+        <div class=" ui huge header column">
+            <a href =about.html>About</a>
+            <div class ="sub header">About the author, software, and data</div>
+        </div>
+
+    </div>
+</div>
+<div class = "ui fluid container">
+    <div id = "table"> </div>
+    <div id="line"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+</div>
+<script>
+
+
+    Plotly.d3.tsv("https://raw.githubusercontent.com/idemello/Cholera484/master/choleraDeaths.tsv", function(err, rows){
+
+
+        var lineGraph = document.getElementById("line");
+        var table = document.getElementById("table");
+
+        function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+        }
+
+
+
+
+        function myFunc(){
+            {
+                document.getElementById("line").style.display = "none";
+                document.getElementById("table").style.display = "block";
+            }
+            /*
+            else if(val == 1){
+                document.getElementById("table").style.display = "none";
+                document.getElementById("line").style.display = "block";
+            }
+            else if(val == 2){
+                document.getElementById("table").style.display = "none";
+                document.getElementById("line").style.display = "block";
+            }*/
+        }
+
+        var headerNames = Plotly.d3.keys(rows[0]);
+
+        var headerValues = [];
+        var cellValues = [];
+        var attackTotals = ["1"];
+        var deathTotals = ["1"];
+
+
+        for (i = 0; i < headerNames.length; i++) {
+            headerValue = [headerNames[i]];
+            headerValues[i] = headerValue;
+            cellValue = unpack(rows, headerNames[i]);
+            cellValues[i] = cellValue;
+        }
+
+        // clean date
+        for (i = 0; i < cellValues[1].length; i++) {
+            var dateValue = cellValues[1][i].split(' ')[0];
+            cellValues[1][i] = dateValue;
+        }
+
+        for(i = 1; i< cellValues[1].length; i++){
+            attackTotals[i] = parseInt(cellValues[1][i], 10) + parseInt(attackTotals[i-1], 10);
+            attackTotals[i] = attackTotals[i].toString();
+            deathTotals[i] = parseInt(cellValues[2][i], 10) + parseInt(deathTotals[i-1], 10);
+            deathTotals[i] = deathTotals[i].toString();
+        }
+
+
+        /* Totals debug
+        *
+        *
+        *
+        for(i = 0; i < cellValues[1].length; i++){
+            console.log(attackTotals[i] + "\n");
+        }
+
+
+        for(i = 0; i < cellValues[1].length; i++){
+            console.log(deathTotals[i] + "\n");
+        }
+    */
+        headerValues.push(["Total Attacks"]);
+        headerValues.push(["Total Deaths"]);
+        cellValues.push(attackTotals);
+        cellValues.push(deathTotals);
+
+        console.log(cellValues);
+
+        var data = [{
+
+            type: 'table',
+            columnwidth: [200,200,200,200],
+            columnorder: [0,1,2,3,4],
+            header: {
+                values: headerValues,
+                align: "center",
+                line: {width: 1, color: '#000000'},
+                fill: {color: ['#000000']},
+                font: {family: "Arial", size: 11, color: "white"}
+            },
+            cells: {
+                values: cellValues,
+                align: ["center", "center"],
+                line: {color: "black", width: 1},
+                fill: {color: ['#D0E1F9','#4D648D', '#D0E1F9', '#4D648D', '#D0E1F9']},
+                font: {family: "Arial", size: 10, color: ["black"]}
+            }
+
+        }];
+
+
+        trace1 = {
+
+            x: cellValues[0],
+            y: cellValues[1],
+            mode: 'lines',
+            name: 'Attacks per Day'
+
+        };
+
+        trace2 = {
+
+            x: cellValues[0],
+            y: cellValues[2],
+            mode: 'lines',
+            name: 'Deaths per Day'
+
+        };
+
+        trace3 = {
+
+            x: cellValues[0],
+            y: attackTotals,
+            mode: 'lines',
+            name: 'Total Attacks'
+        };
+
+        trace4 = {
+
+            x: cellValues[0],
+            y: deathTotals,
+            mode: 'lines',
+            name: 'Total Deaths'
+        };
+
+
+        var lineData = [trace1, trace2, trace3, trace4];
+
+        var layout = {
+            title: "Exhibition of Symptons and Deaths Caused by Cholera from August 19th, 1854 to September 29th 1854"
+        };
+
+        var lineLayout = {
+            title: 'Attacks and Deaths over Time, London August 19 - September 29, 1854',
+            xaxis: {
+                title: 'Date'
+            },
+            yaxis: {
+                title: '# of occurences'
+            }
+        };
+
+
+        Plotly.plot('line', lineData, lineLayout);
+        Plotly.plot('table', data, layout);
+    });
+
+</script>
+</body>
