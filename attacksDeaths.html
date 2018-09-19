@@ -3,6 +3,8 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!--Semantic UI-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <!-- jQuery -->
+    <script src="./jQuery.js"></script>
 </head>
 
 <body>
@@ -37,37 +39,16 @@
     <div id="line"><!-- Plotly chart will be drawn inside this DIV --></div>
 
 </div>
+
 <script>
 
 
     Plotly.d3.tsv("https://raw.githubusercontent.com/idemello/Cholera484/master/choleraDeaths.tsv", function(err, rows){
 
-
-        var lineGraph = document.getElementById("line");
-        var table = document.getElementById("table");
-
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
         }
 
-
-
-
-        function myFunc(){
-            {
-                document.getElementById("line").style.display = "none";
-                document.getElementById("table").style.display = "block";
-            }
-            /*
-            else if(val == 1){
-                document.getElementById("table").style.display = "none";
-                document.getElementById("line").style.display = "block";
-            }
-            else if(val == 2){
-                document.getElementById("table").style.display = "none";
-                document.getElementById("line").style.display = "block";
-            }*/
-        }
 
         var headerNames = Plotly.d3.keys(rows[0]);
 
@@ -179,7 +160,8 @@
         var lineData = [trace1, trace2, trace3, trace4];
 
         var layout = {
-            title: "Exhibition of Symptons and Deaths Caused by Cholera from August 19th, 1854 to September 29th 1854"
+            title: "Exhibition of Symptoms and Deaths Caused by Cholera from August 19th, 1854 to September 29th 1854",
+            height: 500
         };
 
         var lineLayout = {

@@ -17,31 +17,49 @@
 <div class="ui raised very padded text five column divided grid">
     <div class="row">
         <div class=" ui huge header column">
-            <a href =attacksDeaths.html>Attacks and Deaths</a>
+            <a href=attacksDeaths.html>Attacks and Deaths</a>
+            <div class="sub header">Table and line chart showing the number of deaths/attacks and their totals over
+                time
+            </div>
         </div>
         <div class=" ui huge header column">
-            <a href =naples.html>Naples Age Data</a>
+            <a href=naples.html>Naples Age Data</a>
+            <div class="sub header">A bar chart of another cholera outbreak in Naples during the same time period</div>
         </div>
         <div class=" ui huge header column">
-            <a href =UKCensus.html.html>UK Census Data</a>
+            <a href=UKCensus.html>UK Census Data</a>
+            <div class="sub header">A pie chart of UK census data during the cholera outbreak</div>
         </div>
         <div class=" ui huge header column">
-            <a href =map.html>Map Data</a>
+            <a href=map.html>Map Data</a>
+            <div class="sub header">A map of current day London overlaid with cholera death by location</div>
         </div>
         <div class=" ui huge header column">
-            <a href =about.html>About</a>
+            <a href=about.html>About</a>
+            <div class="sub header">About the author, software, and data</div>
         </div>
 
     </div>
 </div>
+<div id="table"></div>
+<div class="ui three column divided grid">
+    <div class="column">
+        <div id="malePie"></div>
+    </div>
 
-<div id = "malePie"></div>
-<div id = "femalePie"></div>
-<div id = "totalPie"></div>
-<div id = "table"></div>
+    <div class="column">
+        <div id="femalePie"></div>
+    </div>
+    <div class="column">
+        <div id="totalPie"></div>
+    </div>
+
+
+</div>
+
 
 <script>
-    Plotly.d3.csv("https://raw.githubusercontent.com/idemello/Cholera484/master/UKcensus1851.csv", function(err, rows) {
+    Plotly.d3.csv("https://raw.githubusercontent.com/idemello/Cholera484/master/UKcensus1851.csv", function (err, rows) {
 
         function unpack(rows, key) {
             return rows.map(function (row) {
@@ -49,7 +67,7 @@
             });
         }
 
-        function add(a,b){
+        function add(a, b) {
             return parseInt(a, 10) + parseInt(b, 10);
         }
 
@@ -92,17 +110,18 @@
                 values: headerValues,
                 align: "center",
                 line: {width: 1, color: 'rgb(50, 50, 50)'},
-                fill: {color: ['rgb(235, 100, 230)']},
-                font: {family: "Arial", size: 11, color: "white"}
+                fill: {color: ['#000']},
+                font: {family: "Sans Serif", size: 11, color: "white"}
             },
             cells: {
                 values: cellValues,
                 align: ["center", "center"],
                 line: {color: "black", width: 1},
-                fill: {color: ['rgba(228, 222, 249, 0.65)', 'rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)']},
+                fill: {color: ['#D0E1F9','#4D648D', '#D0E1F9']},
                 font: {family: "Arial", size: 10, color: ["black"]}
             }
         }];
+
 
         var malePieData = [{
             values: maleValues,
@@ -120,74 +139,40 @@
         var totalPieData = [{
             values: total,
             labels: ['Male', 'Female'],
+            marker: {
+                colors: ['#4897D8','#FA6E59']
+            },
             type: 'pie'
         }];
 
 
         var fLayout = {
-            title: 'Female',
+            title: 'Females by Age Range',
             height: 400,
             width: 500
         };
 
         var mLayout = {
-            title: 'Male',
+            title: 'Males by Age Range',
             height: 400,
             width: 500
         };
 
         var tLayout = {
-            title: 'Males v. Females',
+            title: 'Total Male Population v. Total Female Population',
             height: 400,
             width: 500
 
         };
 
-        /*
-        var values = [
-            ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
-            [2075391, 1711664, 1395091, 1073914, 810979, 560534, 351893, 166194, 40772],
-            [2065096, 1711627, 1542876, 1140383, 845260, 592970, 399019, 199326, 55704]
-        ];
+        layout = {
+            title: 'Males and Females by Age Range Living in the United Kingdom, August 19th, 1854 to September 29th 1854'
+        };
 
-        var data = [{
-            type: 'table',
-            header: {
-                values: [["Age Range"], ["Male"],
-                    ["Female"]],
-                align: "center",
-                line: {width: 1, color: 'black'},
-                fill: {color: "grey"},
-                font: {family: "Arial", size: 12, color: "white"}
-            },
-            cells: {
-                values: values,
-                align: "center",
-                line: {color: "black", width: 1},
-                font: {family: "Arial", size: 11, color: ["black"]}
-            }
-        }];
-
-        var malePieData = [{
-            values: [2075391, 1711664, 1395091, 1073914, 810979, 560534, 351893, 166194, 40772],
-            labels: ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
-            type: 'pie'
-        }];
-
-
-        var femalePieData = [{
-            values: [2065096, 1711627, 1542876, 1140383, 845260, 592970, 399019, 199326, 55704],
-            labels: ["0 to 9", "10 to 19", "20 to 29", "30 to 39", "40 to 49", "50 to 59", "60 to 69", "70 to 79", "80+"],
-            type: 'pie'
-        }];
-
-
-
-        */
         Plotly.newPlot('malePie', malePieData, mLayout);
         Plotly.newPlot('femalePie', femalePieData, fLayout);
         Plotly.newPlot('totalPie', totalPieData, tLayout);
-        Plotly.plot('table', data);
+        Plotly.plot('table', data, layout);
 
     })
 </script>
