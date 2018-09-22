@@ -128,12 +128,13 @@
                 marker: {
                     symbol: 'square',
                     size: 15,
-                    color: 'rgb(0,0,256)'
+                    color: 'rgb(0,0,0)'
                 },
                 name: 'Pump'
             }];
 
            var layout = {
+
                 height: 1000,
                 width: 2000,
                 dragmode: 'zoom',
@@ -157,7 +158,20 @@
                     l: 0,
                     pad: 0
                 },
-                showlegend: true
+                showlegend: true,
+                legend: {
+                    x: 0,
+                    y: 1,
+                    traceorder: 'normal',
+                    font: {
+                        family: 'sans-serif',
+                        size: 12,
+                        color: '#000'
+                    },
+                    bgcolor: '#E2E2E2',
+                    bordercolor: '#FFFFFF',
+                    borderwidth: 2
+                }
             };
 
             Plotly.setPlotConfig({
