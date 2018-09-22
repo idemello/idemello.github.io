@@ -67,15 +67,17 @@
             }
 
 
-            for (var i = 0; i <= rows2.length; i++) {
+            /*for (var i = 0; i <= rows2.length; i++) {
                 rows.push({Deaths: "10.9999", PumpLon: pumpLocLon[i], PumpLat: pumpLocLat[i]});
             }
+            */
             //console.log(pumpLocLon);
             //console.log(pumpLocLat);
 
-            console.log(rows);
+            console.log(pumpLocLat);
+            console.log(pumpLocLon);
 
-            var newArr = Object.values(rows);
+           // var newArr = Object.values(rows);
             //console.log(newArr[0]);
 
             for (i = 0; i < rows2.length; i++) {
@@ -112,11 +114,26 @@
                         ticksuffix: ' deaths',
                         dtick: 1
                     }
-                },
-                name: 'NA Precipitation'
+                    },
+
+                name: 'Deaths'
             }];
 
-            layout = {
+            var pumpData = [{
+                type: 'scattermapbox',
+                mode: 'markers',
+                opacity: 0.5,
+                lon: pumpLocLon,
+                lat: pumpLocLat,
+                marker: {
+                    symbol: 'square',
+                    size: 15,
+                    color: 'rgb(0,0,256)'
+                },
+                name: 'Pump'
+            }];
+
+           var layout = {
                 height: 1000,
                 width: 2000,
                 dragmode: 'zoom',
@@ -140,7 +157,7 @@
                     l: 0,
                     pad: 0
                 },
-                showlegend: false
+                showlegend: true
             };
 
             Plotly.setPlotConfig({
@@ -148,6 +165,7 @@
             });
 
             Plotly.newPlot('myDiv', data, layout);
+            Plotly.plot('myDiv', pumpData, layout);
         })
     });
 
