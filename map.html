@@ -95,9 +95,8 @@
                 lon: unpack(rows, 'PumpLon'),
                 lat: unpack(rows, 'PumpLat'),
                 marker: {
-                    color: unpack(rows, 'Deaths'),
+                    color: 'rgb(255, 3, 3)',
                     autocolorscale: false,
-                    colorscale: scl,
                     cmin: 0,
                     cmax: 20,
                     reversescale: false,
@@ -168,6 +167,7 @@
                         size: 12,
                         color: '#000'
                     },
+                    sizeref: 0.3333,
                     bgcolor: '#E2E2E2',
                     bordercolor: '#FFFFFF',
                     borderwidth: 2
