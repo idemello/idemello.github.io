@@ -1,0 +1,725 @@
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+</style>
+
+<script src="//www.amcharts.com/lib/4/core.js"></script>
+<script src="//www.amcharts.com/lib/4/charts.js"></script>
+<script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="//www.amcharts.com/lib/4/themes/kelly.js"></script>
+<div id="chartdiv1"></div>
+
+
+<script>
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+
+  var chart = am4core.create("chartdiv1", am4charts.XYChart);
+  var title = chart.titles.create();
+  title.text = "Total Daily Users Detected from 10:00AM - 2:00PM";
+  title.fontSize = 25;
+
+  chart.data = [{
+    "weekday": "Thursday",
+    "cars": 1101,
+    "motorcycles": 1062
+  }, {
+    "weekday": "Friday",
+    "cars": 545,
+    "motorcycles": 720
+  }, {
+    "weekday": "Saturday",
+    "cars": 404,
+    "motorcycles": 555
+  }, {
+    "weekday": "Sunday",
+    "cars": 498,
+    "motorcycles": 685
+  }, {
+    "weekday": "Monday",
+    "cars": 2106,
+    "motorcycles": 1801
+  }, {
+    "weekday": "Tuesday",
+    "cars": 2577,
+    "motorcycles": 1434
+  }, {
+    "weekday": "Wednesday",
+    "cars": 2243,
+    "motorcycles": 1925
+  }];
+
+  var dateAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  dateAxis.dataFields.category = "weekday";
+  dateAxis.title.text = "";
+
+  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.tooltip.disabled = true;
+  valueAxis.title.text = "Total Users Detected";
+
+  var series = chart.series.push(new am4charts.LineSeries());
+  series.dataFields.categoryX = "weekday";
+  series.name = "Center for Korean Studies";
+  series.dataFields.valueY = "cars";
+  series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{valueY.value} users</b></span>";
+  series.tooltip.background.fill = am4core.color("#FFF");
+  series.tooltip.getStrokeFromObject = true;
+  series.tooltip.background.strokeWidth = 3;
+  series.tooltip.getFillFromObject = false;
+  series.fillOpacity = 0.6;
+  series.strokeWidth = 2;
+  series.stacked = true;
+
+  var series2 = chart.series.push(new am4charts.LineSeries());
+  series2.name = "Holmes Hall";
+  series2.dataFields.categoryX = "weekday";
+  series2.dataFields.valueY = "motorcycles";
+  series2.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{valueY.value} users</b></span>";
+  series2.tooltip.background.fill = am4core.color("#FFF");
+  series2.tooltip.getFillFromObject = false;
+  series2.tooltip.getStrokeFromObject = true;
+  series2.tooltip.background.strokeWidth = 3;
+  series2.sequencedInterpolation = true;
+  series2.fillOpacity = 0.6;
+  series2.stacked = true;
+  series2.strokeWidth = 2;
+
+  chart.cursor = new am4charts.XYCursor();
+  chart.cursor.xAxis = dateAxis;
+  chart.scrollbarX = new am4core.Scrollbar();
+
+  // Add a legend
+  chart.legend = new am4charts.Legend();
+  chart.legend.position = "bottom";
+
+  // axis ranges
+  var range = dateAxis.axisRanges.create();
+  range.category = "Thursday";
+  range.endCategory = "Sunday";
+  range.label.text = "Summer Vacation";
+  range.label.inside = true;
+  range.label.horizontalCenter = "middle";
+
+  var range2 = dateAxis.axisRanges.create();
+  range2.category = "Monday";
+  range2.label.text = "1st Day of Class";
+  range2.label.inside = true;
+  range2.label.horizontalCenter = "middle";
+  range2.label.verticalCenter = "middle";
+</script>
+
+
+
+
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+</style>
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<div id="chartdiv3" style="display: inline-block;
+margin:10px;"></div>
+
+<script>
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+  var chart = am4core.create("chartdiv3", am4charts.XYChart);
+  chart.maskBullets = false;
+  var title = chart.titles.create();
+  title.text = "Holmes Hall Traffic";
+  title.fontSize = 25;
+
+  var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+
+  xAxis.dataFields.category = "weekday";
+  yAxis.dataFields.category = "hour";
+
+  xAxis.renderer.grid.template.disabled = true;
+  xAxis.renderer.minGridDistance = 40;
+
+  yAxis.renderer.grid.template.disabled = true;
+  yAxis.renderer.inversed = true;
+  yAxis.renderer.minGridDistance = 30;
+
+  var series = chart.series.push(new am4charts.ColumnSeries());
+  series.dataFields.categoryX = "weekday";
+  series.dataFields.categoryY = "hour";
+  series.dataFields.value = "value";
+  series.sequencedInterpolation = true;
+  series.defaultState.transitionDuration = 3000;
+
+  var bgColor = new am4core.InterfaceColorSet().getFor("background");
+
+  var columnTemplate = series.columns.template;
+  columnTemplate.strokeWidth = 1;
+  columnTemplate.strokeOpacity = 0.2;
+  columnTemplate.stroke = bgColor;
+  columnTemplate.tooltipText = "{weekday}, {hour}: {value.workingValue.formatNumber('#.')}";
+  columnTemplate.width = am4core.percent(100);
+  columnTemplate.height = am4core.percent(100);
+
+  series.heatRules.push({
+    target: columnTemplate,
+    property: "fill",
+    min: am4core.color(bgColor),
+    max: chart.colors.getIndex(1)
+  });
+
+  // heat legend
+  var heatLegend = chart.bottomAxesContainer.createChild(am4charts.HeatLegend);
+  heatLegend.width = am4core.percent(100);
+  heatLegend.series = series;
+  heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+  heatLegend.valueAxis.renderer.minGridDistance = 30;
+
+  // heat legend behavior
+  series.columns.template.events.on("over", (event) => {
+    handleHover(event.target);
+  })
+
+  series.columns.template.events.on("hit", (event) => {
+    handleHover(event.target);
+  })
+
+  function handleHover(column) {
+    if (!isNaN(column.dataItem.value)) {
+      heatLegend.valueAxis.showTooltipAt(column.dataItem.value)
+    }
+    else {
+      heatLegend.valueAxis.hideTooltip();
+    }
+  }
+
+  series.columns.template.events.on("out", (event) => {
+    heatLegend.valueAxis.hideTooltip();
+  })
+
+chart.data = [
+  {
+    "hour": "8am",
+    "weekday": "Mon",
+    "value": 562
+  },
+  {
+    "hour": "9am",
+    "weekday": "Mon",
+    "value": 420
+  },
+  {
+    "hour": "10am",
+    "weekday": "Mon",
+    "value": 471
+  },
+  {
+    "hour": "11am",
+    "weekday": "Mon",
+    "value": 499
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Mon",
+    "value": 426
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Mon",
+    "value": 408
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Mon",
+    "value": 468
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Mon",
+    "value": 329
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Mon",
+    "value": 304
+  },
+
+
+  {
+    "hour": "8am",
+    "weekday": "Tue",
+    "value": 573
+  },
+  {
+    "hour": "9am",
+    "weekday": "Tue",
+    "value": 328
+  },
+  {
+    "hour": "10am",
+    "weekday": "Tue",
+    "value": 407
+  },
+  {
+    "hour": "11am",
+    "weekday": "Tue",
+    "value": 363
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Tue",
+    "value": 277
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Tue",
+    "value": 413
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Tue",
+    "value": 381
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Tue",
+    "value": 265
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Tue",
+    "value": 320
+  },
+
+
+  {
+    "hour": "8am",
+    "weekday": "Wed",
+    "value": 371
+  },
+  {
+    "hour": "9am",
+    "weekday": "Wed",
+    "value": 351
+  },
+  {
+    "hour": "10am",
+    "weekday": "Wed",
+    "value": 411
+  },
+  {
+    "hour": "11am",
+    "weekday": "Wed",
+    "value": 449
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Wed",
+    "value": 456
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Wed",
+    "value": 467
+  },
+
+
+  {
+    "hour": "11am",
+    "weekday": "Thu",
+    "value": 243
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Thu",
+    "value": 319
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Thu",
+    "value": 276
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Thu",
+    "value": 225
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Thu",
+    "value": 247
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Thu",
+    "value": 240
+  },
+
+  {
+    "hour": "8am",
+    "weekday": "Fri",
+    "value": 153
+  },
+  {
+    "hour": "9am",
+    "weekday": "Fri",
+    "value": 188
+  },
+  {
+    "hour": "10am",
+    "weekday": "Fri",
+    "value": 197
+  },
+  {
+    "hour": "11am",
+    "weekday": "Fri",
+    "value": 208
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Fri",
+    "value": 179
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Fri",
+    "value": 180
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Fri",
+    "value": 153
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Fri",
+    "value": 166
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Fri",
+    "value": 161
+  }
+];
+</script>
+
+
+
+
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+</style>
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<div id="chartdiv2" style="display: inline-block; 
+margin:10px;"></div>
+
+<script>
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+  var chart = am4core.create("chartdiv2", am4charts.XYChart);
+  chart.maskBullets = false;
+  var title = chart.titles.create();
+  title.text = "Center for Korean Studies Traffic";
+  title.fontSize = 25;
+
+  var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+
+  xAxis.dataFields.category = "weekday";
+  yAxis.dataFields.category = "hour";
+
+  xAxis.renderer.grid.template.disabled = true;
+  xAxis.renderer.minGridDistance = 40;
+
+  yAxis.renderer.grid.template.disabled = true;
+  yAxis.renderer.inversed = true;
+  yAxis.renderer.minGridDistance = 30;
+
+  var series = chart.series.push(new am4charts.ColumnSeries());
+  series.dataFields.categoryX = "weekday";
+  series.dataFields.categoryY = "hour";
+  series.dataFields.value = "value";
+  series.sequencedInterpolation = true;
+  series.defaultState.transitionDuration = 3000;
+
+  var bgColor = new am4core.InterfaceColorSet().getFor("background");
+
+  var columnTemplate = series.columns.template;
+  columnTemplate.strokeWidth = 1;
+  columnTemplate.strokeOpacity = 0.2;
+  columnTemplate.stroke = bgColor;
+  columnTemplate.tooltipText = "{weekday}, {hour}: {value.workingValue.formatNumber('#.')}";
+  columnTemplate.width = am4core.percent(100);
+  columnTemplate.height = am4core.percent(100);
+
+  series.heatRules.push({
+    target: columnTemplate,
+    property: "fill",
+    min: am4core.color(bgColor),
+    max: chart.colors.getIndex(0)
+  });
+
+  // heat legend
+  var heatLegend = chart.bottomAxesContainer.createChild(am4charts.HeatLegend);
+  heatLegend.width = am4core.percent(100);
+  heatLegend.series = series;
+  heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+  heatLegend.valueAxis.renderer.minGridDistance = 30;
+
+  // heat legend behavior
+  series.columns.template.events.on("over", (event) => {
+    handleHover(event.target);
+  })
+
+  series.columns.template.events.on("hit", (event) => {
+    handleHover(event.target);
+  })
+
+  function handleHover(column) {
+    if (!isNaN(column.dataItem.value)) {
+      heatLegend.valueAxis.showTooltipAt(column.dataItem.value)
+    }
+    else {
+      heatLegend.valueAxis.hideTooltip();
+    }
+  }
+
+  series.columns.template.events.on("out", (event) => {
+    heatLegend.valueAxis.hideTooltip();
+  })
+
+chart.data = [
+  {
+    "hour": "8am",
+    "weekday": "Mon",
+    "value": 522
+  },
+  {
+    "hour": "9am",
+    "weekday": "Mon",
+    "value": 618
+  },
+  {
+    "hour": "10am",
+    "weekday": "Mon",
+    "value": 608
+  },
+  {
+    "hour": "11am",
+    "weekday": "Mon",
+    "value": 580
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Mon",
+    "value": 497
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Mon",
+    "value": 544
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Mon",
+    "value": 485
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Mon",
+    "value": 411
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Mon",
+    "value": 489
+  },
+
+
+  {
+    "hour": "8am",
+    "weekday": "Tue",
+    "value": 572
+  },
+  {
+    "hour": "9am",
+    "weekday": "Tue",
+    "value": 391
+  },
+  {
+    "hour": "10am",
+    "weekday": "Tue",
+    "value": 650
+  },
+  {
+    "hour": "11am",
+    "weekday": "Tue",
+    "value": 661
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Tue",
+    "value": 668
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Tue",
+    "value": 654
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Tue",
+    "value": 594
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Tue",
+    "value": 321
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Tue",
+    "value": 514
+  },
+
+
+  {
+    "hour": "8am",
+    "weekday": "Wed",
+    "value": 419
+  },
+  {
+    "hour": "9am",
+    "weekday": "Wed",
+    "value": 568
+  },
+  {
+    "hour": "10am",
+    "weekday": "Wed",
+    "value": 580
+  },
+  {
+    "hour": "11am",
+    "weekday": "Wed",
+    "value": 597
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Wed",
+    "value": 620
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Wed",
+    "value": 541
+  },
+
+
+  {
+    "hour": "11am",
+    "weekday": "Thu",
+    "value": 236
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Thu",
+    "value": 324
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Thu",
+    "value": 351
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Thu",
+    "value": 278
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Thu",
+    "value": 294
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Thu",
+    "value": 298
+  },
+
+  {
+    "hour": "8am",
+    "weekday": "Fri",
+    "value": 95
+  },
+  {
+    "hour": "9am",
+    "weekday": "Fri",
+    "value": 146
+  },
+  {
+    "hour": "10am",
+    "weekday": "Fri",
+    "value": 155
+  },
+  {
+    "hour": "11am",
+    "weekday": "Fri",
+    "value": 154
+  },
+  {
+    "hour": "12pm",
+    "weekday": "Fri",
+    "value": 151
+  },
+  {
+    "hour": "1pm",
+    "weekday": "Fri",
+    "value": 123
+  },
+  {
+    "hour": "2pm",
+    "weekday": "Fri",
+    "value": 117
+  },
+  {
+    "hour": "3pm",
+    "weekday": "Fri",
+    "value": 123
+  },
+  {
+    "hour": "4pm",
+    "weekday": "Fri",
+    "value": 117
+  }
+];
+</script>
